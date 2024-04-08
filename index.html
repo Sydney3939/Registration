@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advising Appointment Registration</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS stylesheet -->
+    <a href="thankyou.html">Go to Thank You Page</a>
+
+</head>
+
+<body>
+    <h2>Advising Appointment Registration</h2>
+    <form id="registrationForm" action="thankyou.html" method="get">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="teacher">Select Teacher:</label><br>
+        <select id="teacher" name="teacher">
+            <option value="Tiffany Ford">Tiffany Ford</option>
+            <option value="Kirsten Markley">Kirsten Markley</option>
+            <option value="Jackson Lewis">Jackson Lewis</option>
+        </select><br><br>
+
+        <label for="month">Select Month:</label><br>
+        <select id="month" name="month">
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <!-- Add remaining months here -->
+        </select><br><br>
+
+        <label for="day">Select Day:</label><br>
+        <input type="number" id="day" name="day" min="1" max="31" required><br><br>
+
+        <label for="time">Select Time:</label><br>
+        <input type="radio" id="am" name="time" value="AM" required>
+        <label for="am">AM</label>
+        <input type="radio" id="pm" name="time" value="PM" required>
+        <label for="pm">PM</label><br><br>
+
+        <label>Select Classes:</label><br>
+        <input type="checkbox" id="class1" name="class1" value="Class 1">
+        <label for="class1">Class 1</label><br>
+        <input type="checkbox" id="class2" name="class2" value="Class 2">
+        <label for="class2">Class 2</label><br>
+        <input type="checkbox" id="class3" name="class3" value="Class 3">
+        <label for="class3">Class 3</label><br>
+        <input type="checkbox" id="class4" name="class4" value="Class 4">
+        <label for="class4">Class 4</label><br>
+        <input type="checkbox" id="class5" name="class5" value="Class 5">
+        <label for="class5">Class 5</label><br><br>
+
+        <label for="comments">Comments:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+        <form id="registrationForm" action="thankyou.html" method="post">
+    	<!-- Form fields -->
+    	<input type="submit" value="Submit">
+	
+    </form>
+</body>
+
+</html>
