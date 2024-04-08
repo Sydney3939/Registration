@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You!</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS stylesheet -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS stylesheet -->
 
 </head>
 
@@ -31,6 +31,11 @@
         const getValue = (param) => {
             return urlParams.get(param);
         }
+	// Function to retrieve query parameter value by name
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
 
         // Display form data
         document.getElementById("firstName").innerText = getValue("firstName");
@@ -40,7 +45,18 @@
         document.getElementById("month").innerText = getValue("month");
         document.getElementById("day").innerText = getValue("day");
         document.getElementById("time").innerText = getValue("time");
-        document.getElementById("classes").innerText = getValue("class1") + ', ' + getValue("class2") + ', ' + getValue("class3") + ', ' + getValue("class4") + ', ' + getValue("class5");
+        // Display classes only if selected
+        let classes = "";
+        for (let i = 1; i <= 5; i++) {
+            const className = getQueryParam("class" + i);
+            if (className) {
+                if (classes !== "") {
+                    classes += ", ";
+                }
+                classes += className;
+            }
+        }
+        document.getElementById("classes").innerText = classes || "None";
         document.getElementById("comments").innerText = getValue("comments");
     </script>
 </body>
